@@ -25,6 +25,15 @@ export const addTask = asyncWrapper(async (req, res, next) => {
     const newTask = await TaskModel.create(req.body);
     return res.status(201).json(newTask);
 });
+export const markTaskAsCompleted = asyncWrapper(async (req, res, next) => {
+    const taskId = req.query.id;
+    const updatedTask = await TaskModel.findByIdAndUpdate(taskId, { status: 'completed' }, { new: true });
+    if (!updatedTask) {
+        return next(new NotFoundError(`Task not found`));
+    }
+    return res.status(200).json(updatedTask);
+});
+
 
 export const getTasks = async (req, res, next) => {
     const tasks = await TaskModel.find({}).populate('tags');
@@ -111,6 +120,27 @@ export const updateTask = asyncWrapper(async (req, res, next) => {
     }
     return res.status(200).json(updatedTask);
 })
+export const filterTasks = asyncWrapper(async (req, res, next) => {
+    const { status } = req.query;
+    const tasks = await TaskModel.find({ status: status }).populate('tags');
+    if (!tasks) {
+        return next(new NotFoundError(`No tasks found with the specified status`));
+    }
+    return res.status(200).json({
+        nbHits: tasks.length,
+        tasks
+    });
+});
+export const editTask = asyncWrapper(async (req, res, next) => {
+    const taskId = req.query.id;
+    const updates = req.body;
+    const updatedTask = await TaskModel.findByIdAndUpdate(taskId, updates, { new: true });
+    if (!updatedTask) {
+        return next(new NotFoundError(`Task not found`));
+    }
+    return res.status(200).json(updatedTask);
+});
+
 
 export const findById = asyncWrapper(async (req, res, next) => {
     const taskId = req.query.id;

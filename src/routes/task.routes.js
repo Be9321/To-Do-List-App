@@ -1,6 +1,6 @@
 import express from 'express';
 const taskRouter = express.Router();
-import { test, addTask, deleteTask, getTasks, findById, updateTask, findByStatus, findByTag, findByParentId, addCheckListItem, updateCheckListItem } from '../controllers/task.controller.js';
+import { test, addTask,markTaskAsCompleted,filterTasks,editTask,deleteTask, getTasks, findById, updateTask, findByStatus, findByTag, findByParentId, addCheckListItem, updateCheckListItem } from '../controllers/task.controller.js';
 import { addTaskValidation, testValidations } from '../utils/validation.js';
 import { setTime } from '../middlewares/time.js';
 
@@ -15,5 +15,7 @@ taskRouter.get('/findByTag', findByTag);
 taskRouter.get('/findByParentId', findByParentId);
 taskRouter.get('/findByStatus', findByStatus);
 taskRouter.delete('/delete', deleteTask);
-
+taskRouter.put('/tasks/mark-as-completed', markTaskAsCompleted)
+taskRouter.get('/tasks/filter', filterTasks);
+taskRouter.put('/tasks/edit', editTask);
 export default taskRouter;
