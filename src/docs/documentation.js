@@ -1,10 +1,10 @@
 const swaggerDocumentation = {
     "openapi": "3.1.0",
     "info": {
-        "title": "Zenkit Clone Application",
-        "description": "This is the API Specification for the zenkit clone app backend server.",
+        "title": "TODO-LIST Application",
+        "description": "This is the API Specification for the ToDoList app backend server.",
         "contact": {
-            "email": "hirwajeric@gmail.com"
+            "email": "belyseurwidukunda@gmail.com",
         },
         "license": {
             "name": "MIT",
@@ -14,23 +14,23 @@ const swaggerDocumentation = {
     },
     "externalDocs": {
         "description": "Get source code",
-        "url": "https://github.com/SheCanCode-Back-end-Cohort-10/zenkit-clone"
+        "url":"https://github.com/Be9321/To-Do-List-App",
     },
     "basePath": "/api/v1",
     "servers": [
         {
-            "url": "http://localhost:3000",
+            "url": "http://localhost:5000",
             "description": "Local server"
         },
         {
-            "url": "https://zenkit-clone.onrender.com",
+            "url": "https://ToDoListApp.onrender.com",
             "description": "Production server"
         }
     ],
     "schemes": ["http", "https"],
     "tags": [
         {
-            "name": "tasks",
+            "name": "ToDoListApp",
             "description": "Operations pertaining to tasks"
         }
     ],
@@ -65,7 +65,7 @@ const swaggerDocumentation = {
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/Task"
+                                "$ref": "#/components/schemas/ToDoListApp"
                             }
                         }
                     }
@@ -76,7 +76,7 @@ const swaggerDocumentation = {
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Task"
+                                    "$ref": "#/components/schemas/ToDoListApp"
                                 }
                             }
                         }
@@ -112,7 +112,7 @@ const swaggerDocumentation = {
                                 "schema": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "#/components/schemas/Task"
+                                        "$ref": "#/components/schemas/ToDoListApp"
                                     }
                                 }
                             }
@@ -131,7 +131,7 @@ const swaggerDocumentation = {
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/Task"
+                                "$ref": "#/components/schemas/ToDoListApp"
                             }
                         }
                     }
@@ -142,7 +142,7 @@ const swaggerDocumentation = {
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Task"
+                                    "$ref": "#/components/schemas/ToDoListApp"
                                 }
                             }
                         }
@@ -186,7 +186,7 @@ const swaggerDocumentation = {
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Task"
+                                    "$ref": "#/components/schemas/ToDoListApp"
                                 }
                             }
                         }
@@ -262,7 +262,7 @@ const swaggerDocumentation = {
     },
     "components": {
         "schemas": {
-            "Task": {
+            "ToDoListApp": {
                 "type": "object",
                 "properties": {
                     "_id": {

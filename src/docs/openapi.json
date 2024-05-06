@@ -1,8 +1,8 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "Zenkit Clone Application",
-    "description": "This is the API Specification for the zenkit clone app backend server.",
+    "title": "ToDo-LIST-APPLICATION",
+    "description": "This is the API Specification for the ToDo List app backend server.",
     "contact": {
       "email": "belyseurwidukunda@gmail.com"
     },
@@ -23,7 +23,7 @@
       "description": "Local server"
     },
     {
-      "url": "https://zenkit-clone.onrender.com",
+      "url": "https://ToDoListApp.onrender.com",
       "description": "Production server"
     }
   ],
@@ -33,7 +33,7 @@
   ],
   "tags": [
     {
-      "name": "tasks",
+      "name": "ToDoListApp",
       "description": "Operations pertaining to tasks"
     }
   ],
@@ -72,7 +72,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Task"
+                "$ref": "#/components/schemas/ToDoListApp"
               }
             }
           }
@@ -83,7 +83,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Task"
+                  "$ref": "#/components/schemas/ToDoListApp"
                 }
               }
             }
@@ -121,7 +121,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Task"
+                    "$ref": "#/components/schemas/ToDoListApp"
                   }
                 }
               }
@@ -142,7 +142,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Task"
+                "$ref": "#/components/schemas/ToDoListApp"
               }
             }
           }
@@ -153,7 +153,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Task"
+                  "$ref": "#/components/schemas/ToDoListApp"
                 }
               }
             }
@@ -199,7 +199,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Task"
+                  "$ref": "#/components/schemas/ToDoListApp"
                 }
               }
             }
@@ -277,7 +277,7 @@
   },
   "components": {
     "schemas": {
-      "Task": {
+      "ToDoListApp": {
         "type": "object",
         "properties": {
           "_id": {
